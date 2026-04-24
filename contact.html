@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact – Pavitra Foundation</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index-2.html" class="nav-logo">🌿 Pavitra Foundation</a>
+    <ul class="nav-links">
+      <li><a href="index-2.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="problem.html">The Problem</a></li>
+      <li><a href="solution.html">Our Solution</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger">&#9776;</button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index-2.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="problem.html">The Problem</a>
+    <a href="solution.html">Our Solution</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <div class="page-hero">
+    <h1>Get In Touch</h1>
+    <p>Whether you want to collaborate, volunteer, or just learn more — we'd love to hear from you.</p>
+  </div>
+
+  <div class="page-content">
+    <h2>Send Us a Message</h2>
+
+    <div class="contact-form">
+      <form id="contactForm">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" placeholder="e.g. Arnav Sharma" required/>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="you@example.com" required/>
+        </div>
+        <div class="form-group">
+          <label for="type">I am a…</label>
+          <select id="type">
+            <option value="">Select one</option>
+            <option value="individual">Individual / Volunteer</option>
+            <option value="ngo">NGO / Foundation</option>
+            <option value="municipality">Municipality / Government</option>
+            <option value="recycler">Recycler / Collector</option>
+            <option value="corporate">Corporate (EPR)</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" placeholder="Tell us how you'd like to collaborate, or ask us anything..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;">Send Message →</button>
+      </form>
+      <div class="form-success" id="formSuccess">
+        ✅ Thank you! We'll get back to you within 2 business days.
+      </div>
+    </div>
+
+    <h2>Other Ways to Reach Us</h2>
+    <p>📧 Email: <strong>hello@pavitrafoundation.org</strong></p>
+    <p>📍 Based in India — working nationally</p>
+    <p>🌐 Follow our journey and updates through our newsletter.</p>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">🌿 Pavitra Foundation</div>
+      <p class="footer-tagline">Circular Economy · E-Waste Logistics · Grassroots Tech</p>
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="problem.html">Problem</a>
+        <a href="solution.html">Solution</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <p class="footer-copy">© 2026 Pavitra Foundation. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
