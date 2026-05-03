@@ -40,14 +40,55 @@ document.querySelectorAll(
 
 const form = document.getElementById('contactForm');
 if (form) {
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
+
+    const submitBtn = document.getElementById('submitBtn');
     const success = document.getElementById('formSuccess');
-    form.style.opacity = '0.5';
-    setTimeout(() => {
-      form.style.display = 'none';
-      if (success) success.style.display = 'block';
-    }, 600);
+    const errorBox = document.getElementById('formError');
+
+    // Gather form data
+    const payload = {
+      name:    document.getElementById('name').value.trim(),
+      email:   document.getElementById('email').value.trim(),
+      type:    document.getElementById('type').value,
+      message: document.getElementById('message').value.trim(),
+    };
+
+    // Loading state
+    submitBtn.textContent = 'Sending…';
+    submitBtn.disabled = true;
+    form.style.opacity = '0.7';
+    if (errorBox) errorBox.style.display = 'none';
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await res.json();
+
+      if (res.ok && data.success) {
+        // Show success
+        form.style.display = 'none';
+        if (success) success.style.display = 'block';
+      } else {
+        throw new Error(data.error || 'Something went wrong.');
+      }
+    } catch (err) {
+      // Show error message
+      form.style.opacity = '1';
+      submitBtn.textContent = 'Send Message →';
+      submitBtn.disabled = false;
+      if (errorBox) {
+        errorBox.textContent = '❌ ' + err.message;
+        errorBox.style.display = 'block';
+      } else {
+        alert('Error: ' + err.message);
+      }
+    }
   });
 }
 
